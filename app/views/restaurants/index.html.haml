@@ -1,3 +1,10 @@
 %h1 GPA
 %p
   Street address, 100 00 Stockholm
+
+%h2 Menu
+
+- @products.each do |product|
+  %p= product.name
+  %p= product.description
+  %p= product.price
