@@ -9,7 +9,5 @@
   %p= product.description
   %p= product.price
 
-- @categorise.each do |category|
-  %p= category.starters
-  %p= category.main_courses
-  %p= category.desserts
+- @categories.each do |category_items|
+  %p= category_items.name

@@ -5,6 +5,6 @@ Feature: User can see restaurant information on index page
 
 Scenario: Visitor should see the information about restaurant
   Given I visit the site
-  Then I should see 'GPA'
-  And I should see 'Street address'
-  And I should see '100 00 Stockholm'
+  Then I should see "GPA"
+  And I should see "Street address"
+  And I should see "100 00 Stockholm"

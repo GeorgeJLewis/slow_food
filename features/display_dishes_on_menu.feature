@@ -4,11 +4,19 @@ Feature: User can see menu items on index page
   I would like to see all available dishes on a menu
 
 Background:
-  Given We have a dish called "Lasagna" with description "Pasta" and price "100"
+  Given We have the following categories:
+    | name         |
+    | Starters     |
+    | Main Courses |
+    | Desserts     |
+  And We have the following dishes:
+    | name           | description | price | category_id   |
+    | Soup           | Pasta       | 100   | Main Courses  |
 
 Scenario: Visitor should see all available dishes
   Given I visit the site
   Then I should see a "Menu"
-  And I should see dish name "Lasagna"
+  And I should see dish name "Soup"
+  And show me the page
   And I should see dish description "Pasta"
   And I should see "100"
