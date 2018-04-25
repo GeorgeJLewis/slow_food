@@ -17,3 +17,7 @@ end
 Given("We have a dish called {string} with description {string} and price {string}") do |name, description, price|
   Product.create(name: name, description: description, price: price)
 end
+
+Given("We have categorise called {string} and {string} and {string}") do |starters, main_courses, desserts|
+  Category.create(starters: starters, main_courses: main_courses, desserts: desserts)
+end

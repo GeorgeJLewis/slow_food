@@ -8,3 +8,8 @@
   %p= product.name
   %p= product.description
   %p= product.price
+
+- @categorise.each do |category|
+  %p= category.starters
+  %p= category.main_courses
+  %p= category.desserts
