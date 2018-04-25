@@ -4,8 +4,12 @@ Feature: User can see dishes categorised on menu
   I would like to see all the dishes on the menu categorised
 
 Background:
-  Given We have categorise called "Starters" and "Main Courses" and "Desserts"
-
+  Given We have the following categories:
+    | name           |
+    | Starters       |
+    | Main Courses   |
+    | Desserts       |
+    
 Scenario: Visitor should see all categorise on menu
   Given I visit the site
   Then I should see "Starters"

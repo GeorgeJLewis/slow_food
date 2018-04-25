@@ -21,3 +21,9 @@ end
 Given("We have categorise called {string} and {string} and {string}") do |starters, main_courses, desserts|
   Category.create(starters: starters, main_courses: main_courses, desserts: desserts)
 end
+
+Given("We have the following categories:") do |table|
+  table.hashes.each do |category|
+    Category.create(name: category[:name])
+  end
+end
