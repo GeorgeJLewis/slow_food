@@ -18,3 +18,11 @@ end
 Then("show me the page") do
   save_and_open_page
 end
+
+Given("I am on the index page") do
+  visit root_path
+end
+
+When("I click the {string}") do |button|
+  click_link_or_button button
+end

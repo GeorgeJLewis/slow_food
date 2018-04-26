@@ -13,3 +13,11 @@ end
 Then("I should see dish description {string}") do |description|
   expect(page).to have_content description
 end
+
+Then("I should see  {string}") do |my_order|
+  expect(page).to have_content my_order
+end
+
+Then("I should be directed to {string} page") do |click_button|
+  expect(page).to have_content click_button
+end

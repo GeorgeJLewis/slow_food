@@ -1,6 +1,9 @@
+
 %h1 GPA
 %p
   Street address, 100 00 Stockholm
+
+%button.my_order. My Order
 
 %h2 Menu
 
@@ -11,3 +14,7 @@
 
 - @categories.each do |category_items|
   %p= category_items.name
+
+
+-#=link_to 'button', my_order_page_path
+-#=link_to('button', my_order_page[:url], target: '_blank')
