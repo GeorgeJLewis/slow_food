@@ -4,10 +4,14 @@
 
 %h2 Menu
 
-- @products.each do |product|
-  %p= product.name
-  %p= product.description
-  %p= product.price
+-# - @products.each do |product|
+-#   %p= product.name
+-#   %p= product.description
+-#   %p= product.price
 
 - @categories.each do |category_items|
   %p= category_items.name
+  - category_items.products.each do |product|
+    %p= product.name
+    %p= product.description
+    %p= product.price
