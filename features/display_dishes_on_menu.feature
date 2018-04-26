@@ -10,7 +10,7 @@ Background:
     | Main Courses |
     | Desserts     |
   And We have the following dishes:
-    | name           | description | price | category_id   |
+    | name           | description | price | category      |
     | Soup           | Pasta       | 100   | Main Courses  |
 
 Scenario: Visitor should see all available dishes
