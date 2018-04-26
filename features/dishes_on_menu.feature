@@ -13,7 +13,7 @@ Background:
     | name           | description | price | category      |
     | Soup           | Pasta       | 100   | Main Courses  |
 
-Scenario: Visitor should see all available dishes
+Scenario: Visitor should see dishes on menu
   Given I visit the site
   Then I should see a "Menu"
   And I should see dish name "Soup"
