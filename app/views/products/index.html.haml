@@ -3,6 +3,9 @@
 - @categories.each do |category|
   %p= category.name
   - category.products.each do |product|
-    %p= product.name
-    %p= product.description
-    %p= product.price
+    %div{id: "product_#{product.id}"}
+      %p= product.name
+      %p= product.description
+      %p= product.price
+      %span
+        = link_to "Edit", product_path(product)
