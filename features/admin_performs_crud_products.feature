@@ -21,9 +21,9 @@ Scenario: Owner can view products
 Scenario: Owner can edit product
   Given I am on product page
   And I click "Edit" button for "Snails"
-  And I fill in "name" with "Toast"
-  And I fill in "description" with "Bread"
-  And I fill in "price" with "25"
+  And I fill in "Name" with "Toast"
+  And I fill in "Description" with "Bread"
+  And I fill in "Price" with "25"
   And I select "Main Courses"
-  And I click "Submit"
+  And I click "Update Product"
   Then I should see "You have successfully updated product"

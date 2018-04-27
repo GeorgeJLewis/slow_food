@@ -26,13 +26,13 @@ Given("I click {string} button for {string}") do |button, product_name|
 end
 
 Given("I fill in {string} with {string}") do |field, text|
-  pending # Write code here that turns the phrase above into concrete actions
+  fill_in field, with: text
 end
 
 Given("I select {string}") do |category|
-  pending # Write code here that turns the phrase above into concrete actions
+  select(category, from: 'product[category_id]')
 end
 
 Given("I click {string}") do |button|
-  pending # Write code here that turns the phrase above into concrete actions
+  click_link_or_button button
 end
