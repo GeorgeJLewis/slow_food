@@ -17,6 +17,6 @@ Scenario: Visitor should see dishes on menu
   Given I visit the site
   Then I should see a "Menu"
   And I should see dish name "Soup"
-  And show me the page
+  # And show me the page
   And I should see dish description "Pasta"
   And I should see "100"

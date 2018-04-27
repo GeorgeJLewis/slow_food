@@ -13,3 +13,7 @@ end
 Then("I should see dish description {string}") do |description|
   expect(page).to have_content description
 end
+
+Given("I am on product page") do
+  visit products_path
+end
