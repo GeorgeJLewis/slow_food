@@ -1,4 +1,4 @@
-= simple_form_for @product do |f|
+= form_with model: @product, local: true do  |form|
   - if @product.errors.any?
     #error_explanation
       %h2
@@ -7,9 +7,12 @@
         - @product.errors.full_messages.each do |msg|
           %li
             = msg
-  .form-group
-    = f.input :title, class: "form-control"
-  .form-group
-    = f.input :body, :as => :ckeditor, input_html: {:ckeditor => {:toolbar => 'FULL'}}, class: "form-control"
-  .form-group
-    = f.button :submit
+  = form.label :name
+  = form.text_field :name
+  = form.label :description, 'Description'
+  = form.text_area :description
+  = form.label :price
+  = form.text_field :price
+  = form.label :category
+  = form.collection_select :category_id, Category.all, :id, :name
+  = form.submit
