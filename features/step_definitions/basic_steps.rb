@@ -18,3 +18,7 @@ end
 Then("show me the page") do
   save_and_open_page
 end
+
+Given("I visit the admin site") do
+  visit orders_path
+end

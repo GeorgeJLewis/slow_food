@@ -14,6 +14,7 @@ Then("I should see dish description {string}") do |description|
   expect(page).to have_content description
 end
 
+<<<<<<< HEAD
 Given("I am on product page") do
   visit products_path
 end
@@ -35,4 +36,12 @@ end
 
 Given("I click {string}") do |button|
   click_link_or_button button
+=======
+Then("I should see orders") do
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Then("be able to modify them") do
+  pending # Write code here that turns the phrase above into concrete actions
+>>>>>>> admin_form
 end

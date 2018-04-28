@@ -13,7 +13,12 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
+<<<<<<< HEAD
 gem 'capybara', '~> 2.18'
+=======
+gem 'mui-sass'
+# gem 'faker'
+>>>>>>> admin_form
 
 group :development, :test do
   gem 'pry-byebug'
