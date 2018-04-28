@@ -1,15 +1,15 @@
-.mui-container
-  %table
-    %tr.mui--appbar-height
-      %td.mui--text-title
-      %td.mui--text-right
-        %ul.mui-list--inline.mui--text-body2
-          %li
-            %a{:href => "#"} About
-          %li
-            %a{:href => "#"} Pricing
-          %li
-            %a{:href => "#"} Login
+-# .mui-container
+-#   %table
+-#     %tr.mui--appbar-height
+-#       %td.mui--text-title
+-#       %td.mui--text-right
+-#         %ul.mui-list--inline.mui--text-body2
+-#           %li
+-#             %a{:href => "#"} About
+-#           %li
+-#             %a{:href => "#"} Pricing
+-#           %li
+-#             %a{:href => "#"} Login
 
 %h1 GPA
 %p
@@ -17,14 +17,12 @@
 
 %h2 Menu
 
--# - @products.each do |product|
--#   %p= product.name
--#   %p= product.description
--#   %p= product.price
-
 - @categories.each do |category_items|
   %p= category_items.name
   - category_items.products.each do |product|
     %p= product.name
     %p= product.description
     %p= product.price
+
+%span.shop-icon
+  %span#order-details.shop-quantity 1 item

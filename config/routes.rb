@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
   root controller: :restaurants, action: :index
-  resources :products
+  mount Cartify::Engine, at: '/'
+  resources :products, only: [:show]
 end
