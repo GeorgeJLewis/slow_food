@@ -1,0 +1,15 @@
+%h1 Products#index
+
+= link_to "Create", new_product_path
+
+- @categories.each do |category|
+  %p= category.name
+  - category.products.each do |product|
+    %div{id: "product_#{product.id}"}
+      %p= product.name
+      %p= product.description
+      %p= product.price
+      %span
+        = link_to "Edit", edit_product_path(product)
+        = link_to "Delete", product, method: :delete, data: { confirm: "You sure?" }
+

@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+<<<<<<< HEAD
  before_action :find_post, only: [:edit, :update, :show, :delete]
 
  # Index action to render all posts
@@ -32,12 +33,58 @@ class ProductsController < ApplicationController
    if @products.update_attributes(products_params)
      flash[:notice] = "Successfully updated product!"
      redirect_to products_path(@products)
+=======
+  def index
+    @categories = Category.all
+  end
+
+  def edit
+    @product = Product.find_by(id: params[:id])
+ end
+
+ def update
+   @product = Product.find_by(id: params[:id])
+   if @product.update_attributes(products_params)
+     flash[:notice] = "You have successfully updated product"
+     redirect_to products_path(@product)
+>>>>>>> bcf1a7053db4ec492b952b2d0f66482408f7bf4e
    else
      flash[:alert] = "Error updating product!"
      render :edit
    end
  end
 
+<<<<<<< HEAD
  # The show action renders the individual post after retrieving the the id
  def show
  end
+=======
+  def new
+    @product = Product.new
+  end
+
+  def create
+    @product = Product.new(products_params)
+    if @product.save
+      flash[:notice] = "You have successfully created product"
+      redirect_to products_path(@product)
+    else
+      flash[:alert] = "Error creating product!"
+      render "new"
+    end
+  end
+
+  def destroy
+    @product = Product.find_by(id: params[:id])
+    @product.destroy
+    flash[:notice] = "You have successfully deleted product"
+    redirect_to products_path
+  end
+
+ private
+ def products_params
+   params.require(:product).permit(:name, :description, :price, :category_id)
+ end
+end
+
+>>>>>>> bcf1a7053db4ec492b952b2d0f66482408f7bf4e
