@@ -1,9 +1,9 @@
 .mui-appbar
   %table{width: "100%"}
   %div.mui--text-center
-    %button.mui-btn.mui-btn--accent Home
-    %button.mui-btn.mui-btn--accent Register Account
-    %button.mui-btn.mui-btn--accent Order Page
+    %button.mui-btn.mui-btn--accent G
+    %button.mui-btn.mui-btn--accent P
+    %button.mui-btn.mui-btn--accent A
 
 
 %h1.mui--text-center GPA
@@ -23,12 +23,8 @@
   %h3= category_items.name
   %br
   - category_items.products.each do |product|
-    -# %form{action: ""}
-    -# %input{name: "name", type: "checkbox", value: "price"}
     %br
     %p.mui-col-md-4= product.name
-    -# %form{action: ""}
-    -# %input{name: "name", type: "checkbox", value: "price"}
     %br
     %p.mui-col-md-4= product.description
     %br
