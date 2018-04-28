@@ -41,6 +41,10 @@ class ProductsController < ApplicationController
    @product = Product.find(params[:id])
  end
 
+ def cart
+   @product = Product.find
+ end
+
   def new
     @product = Product.new
   end
