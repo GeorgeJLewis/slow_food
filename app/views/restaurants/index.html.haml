@@ -1,15 +1,3 @@
--# .mui-container
--#   %table
--#     %tr.mui--appbar-height
--#       %td.mui--text-title
--#       %td.mui--text-right
--#         %ul.mui-list--inline.mui--text-body2
--#           %li
--#             %a{:href => "#"} About
--#           %li
--#             %a{:href => "#"} Pricing
--#           %li
--#             %a{:href => "#"} Login
 .mui-appbar
   %table{width: "100%"}
   %div.mui--text-center
@@ -35,13 +23,16 @@
   %h3= category_items.name
   %br
   - category_items.products.each do |product|
+    -# %form{action: ""}
+    -# %input{name: "name", type: "checkbox", value: "price"}
     %br
     %p.mui-col-md-4= product.name
+    -# %form{action: ""}
+    -# %input{name: "name", type: "checkbox", value: "price"}
     %br
     %p.mui-col-md-4= product.description
     %br
     %p.mui-col-md-4= product.price
-
 
 %span.shop-icon
   %span#order-details.shop-quantity 1 item
