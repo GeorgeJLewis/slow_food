@@ -10,19 +10,38 @@
 -#             %a{:href => "#"} Pricing
 -#           %li
 -#             %a{:href => "#"} Login
+.mui-appbar
+  %table{width: "100%"}
+  %div.mui--text-center
+    %button.mui-btn.mui-btn--accent Home
+    %button.mui-btn.mui-btn--accent Register Account
+    %button.mui-btn.mui-btn--accent Order Page
 
-%h1 GPA
-%p
+
+%h1.mui--text-center GPA
+%p.mui--text-center
   Street address, 100 00 Stockholm
 
-%h2 Menu
-
+%h1.mui--text-center Menu
+%table.mui-table
+  %thead
+    %tr
+    %th
+    %th
+    %th
+.mui-container-fluid
+  .mui-row
 - @categories.each do |category_items|
-  %p= category_items.name
+  %h3= category_items.name
+  %br
   - category_items.products.each do |product|
-    %p= product.name
-    %p= product.description
-    %p= product.price
+    %br
+    %p.mui-col-md-4= product.name
+    %br
+    %p.mui-col-md-4= product.description
+    %br
+    %p.mui-col-md-4= product.price
+
 
 %span.shop-icon
   %span#order-details.shop-quantity 1 item

@@ -1,11 +1,28 @@
-%h1 Products#index
+%h1.mui--text-center Products#index
+%table.mui-table
+  %thead
+    %tr
+      %th
+      %th
+      %th
+      %th
+.mui-container-fluid
+  .mui-row
 
 - @categories.each do |category|
-  %p= category.name
+  %h3= category.name
   - category.products.each do |product|
     %div{id: "product_#{product.id}"}
-      %p= product.name
-      %p= product.description
-      %p= product.price
-      %span
-        = link_to "Edit", edit_product_path(product)
+      %br
+      %p.mui-col-md-4= product.name
+      %br
+      %p.mui-col-md-4= product.description
+      %br
+      %p.mui-col-md-4= product.price
+      %br
+
+    %table.mui-table
+      %thead
+        %th
+          %span
+            = link_to "Edit", edit_product_path(product)
