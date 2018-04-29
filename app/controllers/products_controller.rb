@@ -1,22 +1,4 @@
 class ProductsController < ApplicationController
- def index
-   @products = Product.all
- end
-
- def new
-   @products = Product.new
- end
-
- def create
-   @products = Product.new
-   if @products.save(products_params)
-     flash[:notice] = "Successfully created product!"
-     redirect_to products_path(@products)
-   else
-     flash[:alert] = "Error creating new product!"
-     render :new
-   end
- end
 
   def index
     @categories = Category.all
@@ -24,26 +6,26 @@ class ProductsController < ApplicationController
 
   def edit
     @product = Product.find_by(id: params[:id])
- end
+  end
 
- def update
-   @product = Product.find_by(id: params[:id])
-   if @product.update_attributes(products_params)
-     flash[:notice] = "You have successfully updated product"
-     redirect_to products_path(@product)
-   else
-     flash[:alert] = "Error updating product!"
-     render :edit
-   end
- end
+  def update
+    @product = Product.find_by(id: params[:id])
+    if @product.update_attributes(products_params)
+      flash[:notice] = "You have successfully updated product"
+      redirect_to products_path(@product)
+    else
+      flash[:alert] = "Error updating product!"
+      render :edit
+    end
+  end
 
- def show
-   @product = Product.find(params[:id])
- end
+  def show
+    @product = Product.find(params[:id])
+  end
 
- def cart
-   @product = Product.find
- end
+  def cart
+    @product = Product.find
+  end
 
   def new
     @product = Product.new
@@ -67,8 +49,9 @@ class ProductsController < ApplicationController
     redirect_to products_path
   end
 
- private
- def products_params
-   params.require(:product).permit(:name, :description, :price, :category_id)
- end
+  private
+
+  def products_params
+    params.require(:product).permit(:name, :description, :price, :category_id)
+  end
 end

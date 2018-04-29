@@ -1,4 +1,4 @@
-%h1.mui--text-center Products#index
+%h1.mui--text-center Products
 %table.mui-table
   %thead
     %tr
@@ -13,13 +13,12 @@
   %h3= category.name
   - category.products.each do |product|
     %div{id: "product_#{product.id}"}
-      %br
-      %p.mui-col-md-4= product.name
-      %br
-      %p.mui-col-md-4= product.description
-      %br
-      %p.mui-col-md-4= product.price
-      %br
+      .mui-col-md-4
+        %p= product.name
+      .mui-col-md-4
+        %p= product.description
+      .mui-col-md-4
+        %p= product.price
 
 
 
