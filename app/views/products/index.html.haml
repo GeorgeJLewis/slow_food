@@ -8,22 +8,26 @@
       %th
 .mui-container-fluid
   .mui-row
+= link_to "New Product", new_product_path, class: "mui-btn mui-btn--raised mui-btn--primary"
 
 - @categories.each do |category|
   %h3= category.name
   - category.products.each do |product|
     %div{id: "product_#{product.id}"}
-      .mui-col-md-4
+      .mui-col-md-2
         %p= product.name
       .mui-col-md-4
         %p= product.description
-      .mui-col-md-4
+      .mui-col-md-2.mui--text-right
         %p= product.price
+      .mui-col-md-4.mui--text-right
+        = link_to "Edit", edit_product_path(product), class: "mui-btn mui-btn--raised mui-btn--accent"
+        -#= link_to "Delete", product_path(product), method: :delete, class: "mui-btn mui-btn--raised mui-btn--accent"
+    %br
 
 
+    -#%table.mui-table
+    -#  %thead
+    -#    %th
+    -#      %span
 
-    %table.mui-table
-      %thead
-        %th
-          %span
-            = link_to "Edit", edit_product_path(product)
