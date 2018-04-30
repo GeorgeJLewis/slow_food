@@ -1,28 +1,35 @@
--# .mui-container
--#   %table
--#     %tr.mui--appbar-height
--#       %td.mui--text-title
--#       %td.mui--text-right
--#         %ul.mui-list--inline.mui--text-body2
--#           %li
--#             %a{:href => "#"} About
--#           %li
--#             %a{:href => "#"} Pricing
--#           %li
--#             %a{:href => "#"} Login
+.mui-appbar
+  %table{width: "100%"}
+  %div.mui--text-center
+    %button.mui-btn.mui-btn--accent G
+    %button.mui-btn.mui-btn--accent P
+    %button.mui-btn.mui-btn--accent A
 
-%h1 GPA
-%p
+
+%h1.mui--text-center GPA
+%p.mui--text-center
   Street address, 100 00 Stockholm
 
-%h2 Menu
+%h1.mui--text-center Menu
+%table.mui-table
+  %thead
+    %tr
+    %th
+    %th
+    %th
+.mui-container-fluid
+  -#.mui-row
+  - @categories.each do |category_items|
+    %br
+    %h3= category_items.name
+    - category_items.products.each do |product|
+      .mui-col-md-4.mui-col-lg-4
+        %p= product.name
+      .mui-col-md-4.mui-col-lg-4
+        %p= product.description
+      .mui-col-md-4.mui-col-lg-4.mui--text-right
+        %p= product.price
+      %br
 
-- @categories.each do |category_items|
-  %p= category_items.name
-  - category_items.products.each do |product|
-    %p= product.name
-    %p= product.description
-    %p= product.price
-
-%span.shop-icon
-  %span#order-details.shop-quantity 1 item
+-#%span.shop-icon
+-#  %span#order-details.shop-quantity 1 item
